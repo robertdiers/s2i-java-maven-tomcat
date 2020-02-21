@@ -1,0 +1,16 @@
+#!/bin/bash -e
+#
+# S2I run script for the 's2i-tomcat' image.
+# The run script executes the server that runs your application.
+#
+# For more information see the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+echo "---> deploy WAR"
+cd target
+find * -name *.war
+mv `find * -name *.war` /tomcat/webapps/`find * -name *.war`
+
+echo "---> start Tomcat"
+/tomcat/bin/catalina.sh run
