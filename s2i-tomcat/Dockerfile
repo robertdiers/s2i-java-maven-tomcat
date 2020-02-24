@@ -22,7 +22,7 @@ LABEL io.k8s.description="Platform for building Java apps running on Tomcat" \
 RUN yum update -y && \
  yum install -y curl && \
  yum install -y nc && \
- yum install -y java-$MAVEN_VERSION-openjdk java-$MAVEN_VERSION-openjdk-devel && \
+ yum install -y java-$JAVA_VERSON-openjdk java-$JAVA_VERSON-openjdk-devel && \
  yum clean all
  
 # Download Maven
